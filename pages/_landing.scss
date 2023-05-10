@@ -76,15 +76,50 @@ body {
                 h1{
                     font-size: 4rem;
                     font-weight: 780;
-                    
                 }
-
                 h4{
                     font-size: 2rem;
                 }
                 .banner-btn{
                     gap: 1rem;
                     display: flex;
+                    text-align: left;
+                    justify-content: left;
+                    a {
+                        padding: 1.8rem 4rem;
+                        border-radius: 5rem;
+                        background-color: $clr-black;
+                        color: $clr-light;
+    
+                        &:hover {
+                            transform: scale(1.05);
+                        }
+    
+                        &.btn-white {
+                            background-color: $clr-transparent;
+                            border: 2px solid $clr-light;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+
+    @include mediaQuery(998px){
+        &-wrapper{
+            width: 100%;
+            .banner-text{
+                h1{
+                    font-size: 4rem;
+                    font-weight: 780;
+                }
+                h4{
+                    font-size: 2rem;
+                }
+                .banner-btn{
+                    gap: 1rem;
+                    
                     text-align: left;
                     justify-content: left;
                     a {
@@ -115,9 +150,7 @@ body {
                 h1{
                     font-size: 4rem;
                     font-weight: 780;
-                    
                 }
-
                 h4{
                     font-size: 2rem;
                 }
@@ -509,6 +542,8 @@ body {
         }
         
     }
+    
+
     @include mediaQuery($break-lg){
         .plans {
             &-wrapper {

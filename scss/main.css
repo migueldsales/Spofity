@@ -180,7 +180,79 @@ body {
   transform: translate(0, -5px) rotate(-225deg);
   transition: 0.5s ease;
 }
+@media screen and (min-width: 998px) {
+  .header .toggle-menu {
+    display: none;
+  }
+  .header .blur {
+    display: none;
+  }
+  .header .header-nav {
+    position: unset;
+    background-color: transparent;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .header .header-nav img {
+    display: none;
+  }
+  .header .header-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+  .header .header-nav ul span {
+    transform: rotate(90deg);
+    width: 2.5rem;
+    margin-left: 0;
+  }
+  .header .header-nav ul li {
+    padding: 0;
+  }
+  .header .header-nav ul li a {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
 @media screen and (min-width: 1080px) {
+  .header .toggle-menu {
+    display: none;
+  }
+  .header .blur {
+    display: none;
+  }
+  .header .header-nav {
+    position: unset;
+    background-color: transparent;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .header .header-nav img {
+    display: none;
+  }
+  .header .header-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+  .header .header-nav ul span {
+    transform: rotate(90deg);
+    width: 2.5rem;
+    margin-left: 0;
+  }
+  .header .header-nav ul li {
+    padding: 0;
+  }
+  .header .header-nav ul li a {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
+@media screen and (min-width: 1920px) {
   .header .toggle-menu {
     display: none;
   }
@@ -419,6 +491,36 @@ body {
   .banner-wrapper .banner-text .banner-btn {
     gap: 1rem;
     display: flex;
+    text-align: left;
+    justify-content: left;
+  }
+  .banner-wrapper .banner-text .banner-btn a {
+    padding: 1.8rem 4rem;
+    border-radius: 5rem;
+    background-color: black;
+    color: hsl(0, 0%, 100%);
+  }
+  .banner-wrapper .banner-text .banner-btn a:hover {
+    transform: scale(1.05);
+  }
+  .banner-wrapper .banner-text .banner-btn a.btn-white {
+    background-color: transparent;
+    border: 2px solid hsl(0, 0%, 100%);
+  }
+}
+@media screen and (min-width: 998px) {
+  .banner-wrapper {
+    width: 100%;
+  }
+  .banner-wrapper .banner-text h1 {
+    font-size: 4rem;
+    font-weight: 780;
+  }
+  .banner-wrapper .banner-text h4 {
+    font-size: 2rem;
+  }
+  .banner-wrapper .banner-text .banner-btn {
+    gap: 1rem;
     text-align: left;
     justify-content: left;
   }
