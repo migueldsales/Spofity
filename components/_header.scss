@@ -1,0 +1,204 @@
+// body{
+//     font-family: "Poppins", sans-serif;
+// }
+
+// .header{
+//     background-color: $clr-black;
+//     .branding {
+//         img{
+//             height: 50px;
+//         }
+//     }
+
+//     & .header-wrapper{
+//         display: flex;
+//         justify-content: space-between;
+        
+//         .header-nav{
+//             ul{
+//                 display: flex;
+//                 gap: 2rem;
+//             }
+
+//             li{
+//             text-decoration: none;
+//             }
+//             a{
+//                 font-size: 1rem;
+//                 color: $clr-light;
+//                 text-decoration: none;
+//                 font-weight: 600;
+//             }
+//             a:hover{
+//                 color: $clr-l-green;
+//             }
+            
+//         }
+//     }
+// }
+
+
+.header{
+    background: $clr-black;
+    position: relative;
+    position: fixed;
+    width: 100%;
+
+    .blur{
+        height: 100vh;
+        width: 20%;
+        background: rgba(0, 0, 0, .6);
+        position: absolute;
+        top: 0;
+        left: 100rem;
+        z-index: 999;
+        transition: .5s ease;
+
+        &.open{
+            left: 0;
+            transition: .5s ease;
+        }
+    }
+
+    &-wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+
+    .branding{
+        img{
+            width: 10rem;
+        }
+    }
+
+    &-nav{
+        position: absolute;
+        top: 0;
+        right: -100rem;
+        background: $clr-black;
+        height: 100vh;
+        width: 80%;
+        transition: 0.5s ease;
+        
+        &.open{
+            right: 0;
+            transition: 0.5s ease;
+        }
+        
+
+        ul{
+            span{
+                display: block;
+                width: 3rem;
+                height: .2rem;
+                background-color: $clr-light;
+                margin: 2rem 2rem;
+            }
+            li{
+                padding: 2rem 0 2rem 2rem;
+                cursor: pointer;
+                a{
+                    color: $clr-light;
+                    font-size: 3rem;
+                    font-weight: 800;
+                }
+                &:hover{
+                    a{
+                        color: $clr-l-green;
+                    }
+                }
+                &.btn{
+                    a{
+                        font-size: 2.5rem;
+                        font-weight: 500;
+                    }
+                }
+            }  
+        }
+        img{
+            width: 10rem;
+            position: absolute;
+            left: 2rem;
+            bottom: 2rem;
+            
+        }
+    }
+    
+    .toggle-menu{
+        z-index: 999;
+        span{
+            width: 3rem;
+            height: .2rem;
+            background-color: $clr-light;
+            display: block;
+            border-radius: 5rem;
+            z-index: 999;
+
+
+            &:nth-child(2){
+                margin: .5rem 0;
+            }
+        }
+
+        &.open{
+            span{
+                &:first-child{
+                transform: translate(0, 10px) rotate(225deg);
+                transition: .5s ease;
+                }
+                &:nth-child(2){
+                    opacity: 0;
+                    transition: .5s ease;
+                }
+                &:last-child{
+                    transform: translate(0, -5px) rotate(-225deg);
+                    transition: .5s ease;
+                }
+            }
+        }
+    }
+
+    @include mediaQuery($break-lg){
+        .toggle-menu{
+            display: none;
+        }
+
+        .blur {
+            display: none;
+        }
+
+        .header-nav{
+            position: unset;
+            background-color: transparent;
+            width: fit-content;
+            height: fit-content;
+            img{
+                display: none;
+            }
+            ul{
+                display: flex;
+                align-items: center;
+                gap: 2.5rem;
+                span{
+                    transform: rotate(90deg);
+                    width: 2.5rem;
+                    margin-left: 0
+                }
+                li{
+                    padding: 0;
+                    a{
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+
+
+    }
+    
+    
+}
+

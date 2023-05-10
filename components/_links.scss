@@ -1,0 +1,167 @@
+.links{
+    padding: 5rem 0;
+    background-color: $clr-black;
+    img{
+        width: 10rem;
+    }
+    &-drop{
+        margin: 5rem 0;
+        &-item{
+            &:not(:first-child), &:not(:last-child){
+                margin: 3rem 0;
+            }
+            h4{
+                color: $clr-gray;
+                display: flex; //fix visually correct code //
+                align-items: center; //fix visually correct code//
+                justify-content: space-between;
+             i{
+                transition: .5s ease;
+                &.open{
+                    transform: rotate(180deg);
+                    transition: .5s ease;
+                }
+             }
+            }
+            ul{
+                max-height: 0rem;
+                overflow: hidden;
+                margin: 0 2rem;
+                transition: .5s ease;
+
+                &.open{
+                    max-height: 20rem;
+                    transition: .5s ease;
+                }
+                li{
+                    padding: 1rem 0;
+                    a{
+                        
+                        font-size: 2rem;
+                        color: $clr-light;
+                    }
+                    &:hover{
+                        cursor: pointer;
+                        a{
+                            color: $clr-l-green;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &-social{
+        ul{
+
+            display: flex;
+            gap: 2rem;
+            li{
+                &:hover{
+                    a{
+                        color: $clr-l-green;
+                        cursor: pointer;
+                    }
+                }
+                a{
+                    color: $clr-light;
+                    display: inline-block;
+                    background-color: gray;
+                    padding: 1.5rem;
+                    border-radius: 5rem;
+                    width: 5rem;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    @include mediaQuery ($break-md){
+        
+    }
+
+    @include mediaQuery ($break-lg){
+        .links{
+            &-wrapper{
+                display: grid;
+                grid-template-columns: .5fr 2fr 1.5fr;
+                grid-gap: 5rem;
+            }
+            &-drop{
+                display: flex;
+                align-items: start;
+                gap: 10rem;
+                margin: 0;
+                &-item{
+                    &:not(:first-child), &:not(:last-child){
+                        margin: 0;
+                    }
+                    h4{
+                        pointer-events: none;
+                        i{
+                            display: none;
+                        }
+                    }
+                    ul{
+                        max-height: 30rem;
+                        margin: 1rem 0;
+                        li{
+                            a{
+                                font-size: 1.5rem;
+                            }
+                        }
+                    }
+                }
+            }
+            &-social{
+                ul{
+                    text-align: right;
+                    justify-content: flex-end;
+                }
+            }
+        }
+    }
+
+    @include mediaQuery ($break-xl){
+        .links{
+            &-wrapper{
+                display: grid;
+                grid-template-columns: .5fr 2fr 1.5fr;
+                grid-gap: 5rem;
+            }
+            &-drop{
+                display: flex;
+                align-items: start;
+                gap: 10rem;
+                margin: 0;
+                &-item{
+                    &:not(:first-child), &:not(:last-child){
+                        margin: 0;
+                    }
+                    h4{
+                        pointer-events: none;
+                        i{
+                            display: none;
+                        }
+                    }
+                    ul{
+                        max-height: 30rem;
+                        margin: 1rem 0;
+                        li{
+                            a{
+                                font-size: 1.5rem;
+                            }
+                        }
+                    }
+                }
+            }
+            &-social{
+                ul{
+                    text-align: right;
+                    justify-content: flex-end;
+                }
+            }
+        }
+
+    }
+}
